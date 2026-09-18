@@ -1,0 +1,355 @@
+/* ===========================================
+   Kwacha Coffee Roasters — style.css
+   Part 2: CSS Styling and Responsive Design
+   =========================================== */
+
+/* -----------------------------------------
+   1. CSS Reset / Base Style
+   ----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colour scheme */
+    --color-primary: #4A2E1F;   /* espresso brown */
+    --color-cream: #F5EBDD;     /* warm cream */
+    --color-accent: #D97B3F;    /* burnt orange */
+    --color-white: #FFFFFF;
+    --color-text: #2B1D14;
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-cream);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* -----------------------------------------
+   2. Typography
+   ----------------------------------------- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* -----------------------------------------
+   3. Header & Navigation (Flexbox)
+   ----------------------------------------- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--color-white);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: var(--color-white);
+    font-weight: 600;
+    padding: 0.4rem 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+.main-nav a.active {
+    border-bottom-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* -----------------------------------------
+   4. Hero Section (Flexbox layout)
+   ----------------------------------------- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    flex: 1 1 50%;
+}
+
+.hero-image {
+    flex: 1 1 50%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* -----------------------------------------
+   5. Buttons (visual styles + pseudo-classes)
+   ----------------------------------------- */
+.cta-button,
+.cta-button-small {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+}
+
+.cta-button-small {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.cta-button:hover,
+.cta-button-small:hover {
+    background-color: var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.cta-button:focus,
+.cta-button-small:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.cta-button:active,
+.cta-button-small:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* -----------------------------------------
+   6. Card Grid (CSS Grid layout)
+   ----------------------------------------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
+
+.product-card .price {
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+/* -----------------------------------------
+   7. General Content Sections
+   ----------------------------------------- */
+.intro,
+.content-block {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-header {
+    text-align: center;
+    padding: 3rem 2rem 1rem;
+}
+
+.faq-list h2 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+/* -----------------------------------------
+   8. Forms
+   ----------------------------------------- */
+.enquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 500px;
+}
+
+.enquiry-form label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.enquiry-form input,
+.enquiry-form textarea {
+    padding: 0.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.enquiry-form input:focus,
+.enquiry-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.enquiry-form button {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* -----------------------------------------
+   9. Footer
+   ----------------------------------------- */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    margin-top: 2rem;
+}
+
+/* -----------------------------------------
+   10. Responsive Breakpoints
+   ----------------------------------------- */
+
+/* Tablet: 768px and below */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile: 480px and below */
+@media (max-width: 480px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
+    }
+}

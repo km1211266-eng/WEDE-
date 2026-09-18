@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwacha Coffee Roasters | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Site header with logo and main navigation -->
+    <header class="site-header">
+        <div class="logo">Kwacha Coffee Roasters</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Our Roasts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero section: first thing a visitor sees -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Small-Batch Coffee, Roasted in Johannesburg</h1>
+                <p>Ethically sourced South African beans, roasted fresh every week
+                   and delivered straight to your door or your cup.</p>
+                <a href="products.html" class="cta-button">Shop Our Roasts</a>
+            </div>
+            <picture class="hero-image">
+                <source media="(max-width: 480px)" srcset="images/hero-small.jpg">
+                <source media="(max-width: 768px)" srcset="images/hero-medium.jpg">
+                <img src="images/hero-large.jpg"
+                     srcset="images/hero-small.jpg 480w, images/hero-medium.jpg 768w, images/hero-large.jpg 1200w"
+                     sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 50vw"
+                     alt="Freshly roasted coffee beans being poured">
+            </picture>
+        </section>
+
+        <!-- Short introduction -->
+        <section class="intro">
+            <h2>Who We Are</h2>
+            <p>Kwacha Coffee Roasters is an independent, small-batch roastery
+               dedicated to sourcing exceptional South African and regional
+               coffee, roasting it with care, and sharing it with our
+               community — one cup at a time.</p>
+        </section>
+
+        <!-- Quick-link cards to key actions -->
+        <section class="card-grid">
+            <div class="card">
+                <h3>Fresh Roasts</h3>
+                <p>New batches roasted weekly, never sitting on a shelf.</p>
+            </div>
+            <div class="card">
+                <h3>Locally Sourced</h3>
+                <p>Beans sourced from farms across South Africa and the region.</p>
+            </div>
+            <div class="card">
+                <h3>Visit the Roastery</h3>
+                <p>Come taste, chat, and watch the roasting process in person.</p>
+            </div>
+            <div class="card">
+                <h3>Order Online</h3>
+                <p>Enquire about stock and place an order for collection or delivery.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Kwacha Coffee Roasters. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
